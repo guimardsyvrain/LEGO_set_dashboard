@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "DataPipeline",
+    "displayName": "Lego_set_Pipeline"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "f499dc09-ae55-8160-4bb3-69a7fa5ced54"
+  }
+}
