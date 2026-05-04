@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Notebook",
+    "displayName": "NB_Lego_analytics"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "0a04b8e4-e93f-bc84-42da-f59d49e54799"
+  }
+}
