@@ -1,0 +1,46 @@
+table Measure_table
+	lineageTag: 94082a84-1bcf-4cc1-aa8f-8e9f06d4b65b
+
+	measure Total_sets = COUNTROWS(lego_dim)
+		formatString: 0
+		lineageTag: 4b6fac49-f21b-4554-983d-586aa0dffa80
+
+	measure Total_groups = DISTINCTCOUNT(lego_dim[themeGroup])
+		formatString: 0
+		lineageTag: 13cd6a4e-74b6-469a-9d46-c89a5a1bed30
+
+	measure avg_age = INT(AVERAGE(lego_dim[agerange_min]))
+		lineageTag: b6289ac6-d549-4e81-99ae-3923d7ce4195
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure avg_price = INT(AVERAGE(lego_fact[US_retailPrice]))
+		formatString: 0
+		lineageTag: 4b053b8e-6d3d-4274-b2fb-75865dae4685
+
+	measure avg_pieces = INT(AVERAGE(lego_fact[pieces]))
+		lineageTag: 9e3f55e6-4088-411b-bfc7-715ed3ad96ba
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure max_prices = ROUND(MAX(lego_fact[US_retailPrice]),1)
+		lineageTag: 1729cf2e-4660-4c58-b5cb-97cf57cae137
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Column
+		isHidden
+		formatString: 0
+		lineageTag: 863a1eec-2ff0-41ff-8543-80492e072b3e
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Column]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Measure_table = calculated
+		mode: import
+		source = DATATABLE("Dummy", INTEGER, {})
+
+	annotation PBI_Id = bf4f64b068e6412f89b28e88bfc1cb05
+

@@ -1,0 +1,41 @@
+table lego_fact
+	lineageTag: 723cee18-9c9c-4caf-afa3-277411500af2
+	sourceLineageTag: [dbo].[lego_fact]
+
+	column set_id
+		dataType: string
+		lineageTag: 081b4f3e-620c-464e-aedb-4eeaf4bf1f9b
+		sourceLineageTag: set_id
+		summarizeBy: none
+		sourceColumn: set_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column pieces
+		dataType: int64
+		formatString: 0
+		lineageTag: 32b15176-6a7d-449e-8838-09073509eeac
+		sourceLineageTag: pieces
+		summarizeBy: sum
+		sourceColumn: pieces
+
+		annotation SummarizationSetBy = Automatic
+
+	column US_retailPrice
+		dataType: double
+		lineageTag: cd3b1d29-2b22-4364-b64e-147093bad7d8
+		sourceLineageTag: US_retailPrice
+		summarizeBy: sum
+		sourceColumn: US_retailPrice
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition lego_fact = entity
+		mode: directLake
+		source
+			entityName: lego_fact
+			schemaName: dbo
+			expressionSource: 'DirectLake - LH_Gold_Lego'
+

@@ -1,0 +1,112 @@
+table lego_dim
+	lineageTag: 96deeca2-8738-44e3-89cf-c24e764dd2c5
+	sourceLineageTag: [dbo].[lego_dim]
+
+	column set_id
+		dataType: string
+		lineageTag: fa161197-a2c2-480a-aabe-ba6b259167b0
+		sourceLineageTag: set_id
+		summarizeBy: none
+		sourceColumn: set_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column name
+		dataType: string
+		lineageTag: 4754b477-45be-4d00-b71d-f0a32833bccc
+		sourceLineageTag: name
+		summarizeBy: none
+		sourceColumn: name
+
+		annotation SummarizationSetBy = Automatic
+
+	column year
+		dataType: int64
+		formatString: 0
+		lineageTag: 0bad3591-a9e6-45ab-9b6d-040f62e83569
+		sourceLineageTag: year
+		summarizeBy: sum
+		sourceColumn: year
+
+		annotation SummarizationSetBy = Automatic
+
+	column theme
+		dataType: string
+		lineageTag: 27838613-3a19-4841-8e28-7fc2fda56b50
+		sourceLineageTag: theme
+		summarizeBy: none
+		sourceColumn: theme
+
+		annotation SummarizationSetBy = Automatic
+
+	column subtheme
+		dataType: string
+		lineageTag: 86e4a6ce-5139-4b3f-8eab-4164c0faecac
+		sourceLineageTag: subtheme
+		summarizeBy: none
+		sourceColumn: subtheme
+
+		annotation SummarizationSetBy = Automatic
+
+	column themeGroup
+		dataType: string
+		lineageTag: 4f704980-e200-4aca-ab99-71825245204c
+		sourceLineageTag: themeGroup
+		summarizeBy: none
+		sourceColumn: themeGroup
+
+		annotation SummarizationSetBy = Automatic
+
+	column category
+		dataType: string
+		lineageTag: 09ce874c-d0be-4751-8552-b36549e588a2
+		sourceLineageTag: category
+		summarizeBy: none
+		sourceColumn: category
+
+		annotation SummarizationSetBy = Automatic
+
+	column agerange_min
+		dataType: int64
+		formatString: 0
+		lineageTag: 1b4b9303-a80a-4ac3-b96f-86a28e8d748c
+		sourceLineageTag: agerange_min
+		summarizeBy: sum
+		sourceColumn: agerange_min
+
+		annotation SummarizationSetBy = Automatic
+
+	column age_group
+		dataType: string
+		lineageTag: 3257bc57-ec1c-4ae5-ae55-6014e9242ac6
+		sourceLineageTag: age_group
+		summarizeBy: none
+		sourceColumn: age_group
+
+		annotation SummarizationSetBy = Automatic
+
+	column price_range
+		dataType: string
+		lineageTag: 06f0e947-f9ef-4dda-bb89-7e8c08c68b87
+		sourceLineageTag: price_range
+		summarizeBy: none
+		sourceColumn: price_range
+
+		annotation SummarizationSetBy = Automatic
+
+	column imageURL
+		dataType: string
+		lineageTag: 52522878-1b21-4ee3-999e-6fd52338baa4
+		sourceLineageTag: imageURL
+		summarizeBy: none
+		sourceColumn: imageURL
+
+		annotation SummarizationSetBy = Automatic
+
+	partition lego_dim = entity
+		mode: directLake
+		source
+			entityName: lego_dim
+			schemaName: dbo
+			expressionSource: 'DirectLake - LH_Gold_Lego'
+

@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "SM_Lego"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "4b64d417-3d72-96bb-4d77-9b83441d99aa"
+  }
+}

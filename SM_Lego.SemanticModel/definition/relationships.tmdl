@@ -1,0 +1,6 @@
+relationship 40de328f-7334-bbf7-78e0-f0894c08a878
+	crossFilteringBehavior: bothDirections
+	fromCardinality: one
+	fromColumn: lego_dim.set_id
+	toColumn: lego_fact.set_id
+
